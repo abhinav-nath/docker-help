@@ -44,3 +44,25 @@ tmp
 usr
 var
 ```
+
+To open an interactive terminal inside the container:
+
+```bash
+$ winpty docker run -i -t busybox
+/ # ls -lrt
+total 36
+drwxr-xr-x    2 root     root         12288 Jun  7 17:34 bin
+drwxrwxrwt    2 root     root          4096 Jun  7 17:34 tmp
+drwxr-xr-x    4 root     root          4096 Jun  7 17:34 var
+drwxr-xr-x    3 root     root          4096 Jun  7 17:34 usr
+drwxr-xr-x    2 nobody   nobody        4096 Jun  7 17:34 home
+dr-xr-xr-x   11 root     root             0 Aug 19 17:02 sys
+dr-xr-xr-x  272 root     root             0 Aug 19 17:02 proc
+drwxr-xr-x    1 root     root          4096 Aug 19 17:02 etc
+drwxr-xr-x    5 root     root           360 Aug 19 17:02 dev
+drwx------    1 root     root          4096 Aug 19 17:02 root
+```
+
+* `-i, --interactive` - interactive mode
+* `-t, --tty` - Allocate a pseudo-TTY
+* `winpty` is only required for windows
